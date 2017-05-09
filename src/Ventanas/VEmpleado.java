@@ -62,6 +62,9 @@ public class VEmpleado extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         btn_RegistrarE = new javax.swing.JButton();
         Box_CargoE = new javax.swing.JComboBox<>();
+        txt_ApellidosE = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
         pnl_MostrarEmpleado = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaEmpleado = new javax.swing.JTable();
@@ -134,7 +137,7 @@ public class VEmpleado extends javax.swing.JFrame {
 
         jLabel4.setForeground(new java.awt.Color(52, 52, 54));
         jLabel4.setText("Cargo");
-        pnl_RegistroEmpleado.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        pnl_RegistroEmpleado.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
         pnl_RegistroEmpleado.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 210, 10));
 
         txt_DNIE.setBackground(new java.awt.Color(32, 33, 35));
@@ -157,7 +160,7 @@ public class VEmpleado extends javax.swing.JFrame {
             }
         });
         pnl_RegistroEmpleado.add(txt_NombreE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 210, 30));
-        pnl_RegistroEmpleado.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 210, 10));
+        pnl_RegistroEmpleado.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 10));
 
         btn_RegistrarE.setBackground(new java.awt.Color(126, 87, 194));
         btn_RegistrarE.setFont(new java.awt.Font("NanumMyeongjo", 1, 12)); // NOI18N
@@ -177,7 +180,22 @@ public class VEmpleado extends javax.swing.JFrame {
                 Box_CargoEFocusGained(evt);
             }
         });
-        pnl_RegistroEmpleado.add(Box_CargoE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 185, 210, 30));
+        pnl_RegistroEmpleado.add(Box_CargoE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 210, 30));
+
+        txt_ApellidosE.setBackground(new java.awt.Color(32, 33, 35));
+        txt_ApellidosE.setForeground(new java.awt.Color(255, 255, 255));
+        txt_ApellidosE.setBorder(null);
+        txt_ApellidosE.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_ApellidosEFocusGained(evt);
+            }
+        });
+        pnl_RegistroEmpleado.add(txt_ApellidosE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 210, 30));
+
+        jLabel5.setForeground(new java.awt.Color(52, 52, 54));
+        jLabel5.setText("Apellidos");
+        pnl_RegistroEmpleado.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        pnl_RegistroEmpleado.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 210, 10));
 
         getContentPane().add(pnl_RegistroEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 390, 500));
 
@@ -261,12 +279,12 @@ public class VEmpleado extends javax.swing.JFrame {
 
     private void btn_RegistrarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarEActionPerformed
 
-        String dni = txt_DNIE.getText();
         String nombre = txt_NombreE.getText();
+        String apellidos = txt_ApellidosE.getText();
         String cargo = (String) Box_CargoE.getSelectedItem(); // Obtener dato del comboBox
 
         try {
-            em.InsertEmpleado(dni, nombre,cargo);
+            em.InsertEmpleado(nombre,apellidos,cargo);
         } catch (SQLException ex) {
             Logger.getLogger(VProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -341,6 +359,10 @@ public class VEmpleado extends javax.swing.JFrame {
         jLabel2.setForeground(new Color(51,52,54));
     }//GEN-LAST:event_Box_CargoEFocusGained
 
+    private void txt_ApellidosEFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_ApellidosEFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_ApellidosEFocusGained
+
     /**
      * @param args the command line arguments
      */
@@ -391,12 +413,14 @@ public class VEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel jbtn_BuscarE;
     private javax.swing.JLabel jbtn_MIn;
     private javax.swing.JLabel jbtn_home;
@@ -404,6 +428,7 @@ public class VEmpleado extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_Encabezado;
     private javax.swing.JPanel pnl_MostrarEmpleado;
     private javax.swing.JPanel pnl_RegistroEmpleado;
+    private javax.swing.JTextField txt_ApellidosE;
     private javax.swing.JTextField txt_BuscarE;
     private javax.swing.JLabel txt_Cerrar;
     private javax.swing.JTextField txt_DNIE;

@@ -25,7 +25,7 @@ public class Producto {
     MySQL cnx = new MySQL();
     
 //Insertar Datos en la Tabla Producto    
-    public void InsertProducto(String Nombre, String Precio, String Categoria) throws SQLException{
+    public void InsertProducto(String Nombre, String Precio_Compra, String Precio_Venta , String Categoria) throws SQLException{
         
         cnx.MySQLCnx();
         
@@ -46,7 +46,7 @@ public class Producto {
         
         try{
                         
-            String Query = "INSERT INTO PRODUCTOS VALUES (idPRODUCTOS,'"+Nombre+"',"+Precio+","+CategoriaID+")";
+            String Query = "INSERT INTO PRODUCTOS VALUES (idPRODUCTOS,'"+Nombre+"',"+Precio_Compra+","+Precio_Venta+","+CategoriaID+")";
             
             Statement st = Conexion.createStatement();
             st.executeUpdate(Query);

@@ -52,10 +52,13 @@ public class VProducto extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         txt_NombreP = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        txt_PrecioP = new javax.swing.JTextField();
+        txt_PrecioComP = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         btn_RegistrarP = new javax.swing.JButton();
         Box_Categoria = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        txt_PrecioVenP = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
         pnl_MostrarProducto = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaProducto = new javax.swing.JTable();
@@ -85,12 +88,12 @@ public class VProducto extends javax.swing.JFrame {
         pnl_RegistroProducto.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(52, 52, 54));
-        jLabel3.setText("Precio");
-        pnl_RegistroProducto.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        jLabel3.setText("Precio Venta");
+        pnl_RegistroProducto.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         jLabel4.setForeground(new java.awt.Color(52, 52, 54));
         jLabel4.setText("Categoria");
-        pnl_RegistroProducto.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        pnl_RegistroProducto.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
         pnl_RegistroProducto.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 210, 10));
 
         txt_NombreP.setBackground(new java.awt.Color(32, 33, 35));
@@ -102,18 +105,18 @@ public class VProducto extends javax.swing.JFrame {
             }
         });
         pnl_RegistroProducto.add(txt_NombreP, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 210, 30));
-        pnl_RegistroProducto.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 210, 10));
+        pnl_RegistroProducto.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 180, 10));
 
-        txt_PrecioP.setBackground(new java.awt.Color(32, 33, 35));
-        txt_PrecioP.setForeground(new java.awt.Color(255, 255, 255));
-        txt_PrecioP.setBorder(null);
-        txt_PrecioP.addFocusListener(new java.awt.event.FocusAdapter() {
+        txt_PrecioComP.setBackground(new java.awt.Color(32, 33, 35));
+        txt_PrecioComP.setForeground(new java.awt.Color(255, 255, 255));
+        txt_PrecioComP.setBorder(null);
+        txt_PrecioComP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txt_PrecioPFocusGained(evt);
+                txt_PrecioComPFocusGained(evt);
             }
         });
-        pnl_RegistroProducto.add(txt_PrecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 210, 30));
-        pnl_RegistroProducto.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 210, 10));
+        pnl_RegistroProducto.add(txt_PrecioComP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 180, 30));
+        pnl_RegistroProducto.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 210, 10));
 
         btn_RegistrarP.setBackground(new java.awt.Color(126, 87, 194));
         btn_RegistrarP.setFont(new java.awt.Font("NanumMyeongjo", 1, 12)); // NOI18N
@@ -133,7 +136,22 @@ public class VProducto extends javax.swing.JFrame {
                 Box_CategoriaFocusGained(evt);
             }
         });
-        pnl_RegistroProducto.add(Box_Categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 210, -1));
+        pnl_RegistroProducto.add(Box_Categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 210, -1));
+
+        jLabel5.setForeground(new java.awt.Color(52, 52, 54));
+        jLabel5.setText("Precio Compra");
+        pnl_RegistroProducto.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+
+        txt_PrecioVenP.setBackground(new java.awt.Color(32, 33, 35));
+        txt_PrecioVenP.setForeground(new java.awt.Color(255, 255, 255));
+        txt_PrecioVenP.setBorder(null);
+        txt_PrecioVenP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_PrecioVenPFocusGained(evt);
+            }
+        });
+        pnl_RegistroProducto.add(txt_PrecioVenP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 180, 30));
+        pnl_RegistroProducto.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 180, 10));
 
         getContentPane().add(pnl_RegistroProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 390, 500));
 
@@ -254,11 +272,12 @@ public class VProducto extends javax.swing.JFrame {
     private void btn_RegistrarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarPActionPerformed
 
         String nombre = txt_NombreP.getText();
-        String precio = txt_PrecioP.getText();
+        String precio_compra = txt_PrecioComP.getText();
+        String precio_venta = txt_PrecioVenP.getText();
         String catg = (String) Box_Categoria.getSelectedItem(); // Obtener dato del comboBox
         
         try {
-            pd.InsertProducto(nombre, precio,catg);
+            pd.InsertProducto(nombre, precio_compra,precio_venta,catg);
         } catch (SQLException ex) {
             Logger.getLogger(VProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -330,17 +349,21 @@ public class VProducto extends javax.swing.JFrame {
         jLabel4.setForeground(new Color(51,52,54));
     }//GEN-LAST:event_txt_NombrePFocusGained
 
-    private void txt_PrecioPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_PrecioPFocusGained
+    private void txt_PrecioComPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_PrecioComPFocusGained
         jLabel3.setForeground(new Color(57,113,177)); // Color titulo al seleccionar
         jLabel2.setForeground(new Color(51,52,54));
         jLabel4.setForeground(new Color(51,52,54));
-    }//GEN-LAST:event_txt_PrecioPFocusGained
+    }//GEN-LAST:event_txt_PrecioComPFocusGained
 
     private void Box_CategoriaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Box_CategoriaFocusGained
         jLabel4.setForeground(new Color(57,113,177)); // Color titulo al seleccionar
         jLabel3.setForeground(new Color(51,52,54));
         jLabel2.setForeground(new Color(51,52,54));
     }//GEN-LAST:event_Box_CategoriaFocusGained
+
+    private void txt_PrecioVenPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_PrecioVenPFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_PrecioVenPFocusGained
 
     /**
      * @param args the command line arguments
@@ -392,6 +415,7 @@ public class VProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
@@ -399,6 +423,7 @@ public class VProducto extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel jbtn_BuscarP;
     private javax.swing.JLabel jbtn_MIn;
     private javax.swing.JLabel jbtn_home;
@@ -408,6 +433,7 @@ public class VProducto extends javax.swing.JFrame {
     private javax.swing.JTextField txt_BuscarP;
     private javax.swing.JLabel txt_Cerrar;
     private javax.swing.JTextField txt_NombreP;
-    private javax.swing.JTextField txt_PrecioP;
+    private javax.swing.JTextField txt_PrecioComP;
+    private javax.swing.JTextField txt_PrecioVenP;
     // End of variables declaration//GEN-END:variables
 }

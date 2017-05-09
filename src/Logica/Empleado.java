@@ -25,7 +25,7 @@ public class Empleado {
     MySQL cnx = new MySQL();
     
 //Insertar Datos en la Tabla Empleado    
-    public void InsertEmpleado(String dni, String Nombre, String Cargo) throws SQLException{
+    public void InsertEmpleado(String Nombre, String Apellidos, String Cargo) throws SQLException{
         
         cnx.MySQLCnx();
         
@@ -33,7 +33,7 @@ public class Empleado {
         
         try{
             
-            String Ct = "SELECT * FROM CARGO WHERE NOMBRE='"+Cargo+"'";
+            String Ct = "SELECT * FROM CARGOS WHERE NOMBRE='"+Cargo+"'";
             Statement st = Conexion.createStatement();
             ResultSet rst = st.executeQuery(Ct);
             rst.next();
@@ -46,7 +46,7 @@ public class Empleado {
         
         try{
                         
-            String Query = "INSERT INTO EMPLEADOS(DNI, NOMBRE, idCARGO) VALUES ("+dni+",'"+Nombre+"','"+CargoID+"')";
+            String Query = "INSERT INTO EMPLEADOS (idEMPLEADOS,NOMBRE,APELLIDOS,idCARGO,ALMACEN_NIT) VALUES(idEMPLEADOS,'"+Nombre+"','"+Apellidos+"','"+CargoID+"',1234567890)";
             
             Statement st = Conexion.createStatement();
             st.executeUpdate(Query);
@@ -54,6 +54,7 @@ public class Empleado {
             
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null,"Error en almacenamiento de datos...");
+            System.err.println(ex.getMessage());            
         }
         
         cnx.CloseCnx();
