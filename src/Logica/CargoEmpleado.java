@@ -31,7 +31,7 @@ public class CargoEmpleado {
         cnx.MySQLCnx();
         
         try {
-            String Query = "SELECT * FROM CARGO";
+            String Query = "SELECT * FROM CARGOS";
             Statement st = Conexion.createStatement();
             ResultSet rs = st.executeQuery(Query);
             
@@ -52,7 +52,7 @@ public class CargoEmpleado {
         cnx.MySQLCnx();
         
         try {
-            String Query = "SELECT * FROM CARGO";
+            String Query = "SELECT * FROM CARGOS";
             Statement st = Conexion.createStatement();
             ResultSet rs = st.executeQuery(Query);
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -78,7 +78,7 @@ public class CargoEmpleado {
         
         try{
                         
-            String Query = "INSERT INTO CARGO VALUES (idCARGO,'"+Nombre+"')";
+            String Query = "INSERT INTO CARGOS VALUES (idCARGO,'"+Nombre+"')";
             
             Statement st = Conexion.createStatement();
             st.executeUpdate(Query);
@@ -97,7 +97,7 @@ public class CargoEmpleado {
         cnx.MySQLCnx();
         
         try {
-            String Query = "SELECT * FROM CARGO";
+            String Query = "SELECT * FROM CARGOS";
             Statement st = Conexion.createStatement();
             ResultSet rstb = st.executeQuery(Query);
             ResultSetMetaData rsmd = rstb.getMetaData();
@@ -134,7 +134,7 @@ public class CargoEmpleado {
         cnx.MySQLCnx();
         
         try {
-            String Query = "SELECT * FROM CARGO WHERE "+campo+"="+dato+"";
+            String Query = "SELECT * FROM CARGOS WHERE "+campo+"="+dato+"";
             Statement st = Conexion.createStatement();
             ResultSet rstb = st.executeQuery(Query);
             ResultSetMetaData rsmd = rstb.getMetaData();
@@ -171,7 +171,7 @@ public class CargoEmpleado {
         
         try {
             
-            String Query = "DELETE FROM CARGO WHERE idCARGO="+ID+"";
+            String Query = "DELETE FROM CARGOS WHERE idCARGO="+ID+"";
             Statement st = Conexion.createStatement();
             st.executeUpdate(Query);
             
@@ -191,7 +191,7 @@ public class CargoEmpleado {
         cnx.MySQLCnx();
         
         try {
-            String Query = "SELECT * FROM CARGO WHERE "+Busca+" ="+Cadena+"";
+            String Query = "SELECT * FROM CARGOS WHERE "+Busca+" ="+Cadena+"";
             Statement st = Conexion.createStatement();
             java.sql.ResultSet resultSet;
             resultSet = st.executeQuery(Query);
