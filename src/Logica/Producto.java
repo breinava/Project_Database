@@ -29,7 +29,7 @@ public class Producto {
         
         cnx.MySQLCnx();
         
-        String CategoriaID = null;
+        String CategoriaID = "";
         
         try{
             
